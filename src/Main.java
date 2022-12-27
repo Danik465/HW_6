@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
 
 public class Main {
@@ -14,10 +15,15 @@ public class Main {
      * процент уникальных чисел = количество уникальных чисел * 100 / общее количество чисел в массиве.
      */
     public static void main(String[] args) {
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 7, 7,8};
-
+        Random rand = new Random();
+        int[] array =  new int[1000];
+        for (int i = 0; i < array.length ; i++) {
+            array[i] = rand.nextInt(0,24);
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
         System.out.println(Unique(array));
-        oopDemo();
+        //oopDemo();
     }
 
     public  static double Unique(int[] arr){
@@ -28,6 +34,7 @@ public class Main {
                 count++;
             }
         }
+        System.out.println(unique);
         return (double) count*100/ arr.length;
 
     }
